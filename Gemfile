@@ -5,10 +5,7 @@ gem 'will_paginate', '3.0.3'
 gem 'devise'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'jquery-rails'
 gem 'sqlite3'
 
 
@@ -24,7 +21,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

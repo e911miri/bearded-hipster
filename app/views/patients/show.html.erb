@@ -1,20 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @patient.name %>
+<p id="notice">
+	<%= notice %>
 </p>
-
 <p>
-  <b>Genotype:</b>
-  <%= @patient.genotype %>
+	<b>Name:</b>
+	<%= @patient.name %>
 </p>
-
 <p>
-  <b>Status:</b>
-  <%= @patient.status %>
+	<b>Genotype:</b>
+	<%= @patient.genotype %>
 </p>
-
-
+<p>
+	<b>Status:</b>
+	<%= @patient.status %>
+</p>
+<% if @patient.patientrecords.any? %> 
+<h3>Patient Records (<%= @patient.patientrecords.count %>)</h3>
+<ol class="microposts">
+	<%= render @patientrecords %>
+</ol>
+<%= will_paginate @microposts %>
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Back', patients_path %> 
