@@ -4,7 +4,7 @@ Babs::Application.routes.draw do
   # devise_for :models
 
   resources :patients
-  root :to => 'patients#index'
+  root :to => 'public#home'
   
   match 'about' => 'public#about'
   match 'contact' => 'public#contact'
