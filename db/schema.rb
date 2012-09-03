@@ -11,31 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903071818) do
+ActiveRecord::Schema.define(:version => 20120903074004) do
 
   create_table "alergies", :force => true do |t|
     t.integer  "patient_id"
-    t.string   "substance"
-    t.string   "description"
+    t.string   "irritant"
+    t.string   "symptoms"
     t.string   "remedy"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "doctor"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "families", :force => true do |t|
-    t.integer  "patient_id"
-    t.string   "condition"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "doctors", :force => true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.string   "address"
+    t.string   "specialty"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "medications", :force => true do |t|
     t.integer  "patient_id"
+    t.string   "condition"
     t.string   "drug"
     t.string   "dossage"
     t.string   "duration"
-    t.string   "pharmacist"
+    t.string   "doctor"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -47,55 +51,41 @@ ActiveRecord::Schema.define(:version => 20120903071818) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "models", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "username"
-  end
-
-  add_index "models", ["email"], :name => "index_models_on_email", :unique => true
-  add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
-
-  create_table "patientrecords", :force => true do |t|
-    t.integer  "patient_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "patients", :force => true do |t|
-    t.string   "name"
-    t.string   "genotype"
-    t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "age"
+    t.string   "gender"
+    t.string   "origin"
+    t.string   "address"
+    t.string   "tribe"
+    t.string   "occupation"
+    t.string   "religion"
+    t.string   "phone"
+    t.string   "nextofkin"
+    t.string   "family_history"
+    t.string   "past_medical_record"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "socials", :force => true do |t|
     t.integer  "patient_id"
     t.string   "condition"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "reason"
+    t.string   "treatment"
+    t.string   "doctor"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "surgicals", :force => true do |t|
     t.integer  "patient_id"
-    t.string   "title"
-    t.string   "description"
+    t.string   "condition"
+    t.string   "procedure"
     t.string   "surgeon"
-    t.string   "report"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

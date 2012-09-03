@@ -2,7 +2,7 @@ class CreateSocials < ActiveRecord::Migration
   def change
     create_table :socials do |t|
       t.integer :patient_id
-      t.title :condition
+      t.string :condition
       t.string :reason
       t.string :treatment
       t.string :doctor
