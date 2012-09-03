@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  patient_id: 1
+  drug: MyString
+  dossage: MyString
+  duration: MyString
+  pharmacist: MyString
+
+two:
+  patient_id: 1
+  drug: MyString
+  dossage: MyString
+  duration: MyString
+  pharmacist: MyString

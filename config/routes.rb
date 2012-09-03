@@ -1,5 +1,5 @@
 Babs::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_names =>{:sign_up => "register"}
 # 
   # devise_for :models
 
