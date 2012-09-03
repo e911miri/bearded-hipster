@@ -1,3 +1,3 @@
 class Medication < ActiveRecord::Base
-  attr_accessible :dossage, :drug, :duration, :patient_id, :pharmacist
+  attr_accessible :condition, :doctor, :dossage, :drug, :duration, :patient_id
 end

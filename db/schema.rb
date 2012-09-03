@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713212242) do
+ActiveRecord::Schema.define(:version => 20120903071818) do
+
+  create_table "alergies", :force => true do |t|
+    t.integer  "patient_id"
+    t.string   "substance"
+    t.string   "description"
+    t.string   "remedy"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "families", :force => true do |t|
+    t.integer  "patient_id"
+    t.string   "condition"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "medications", :force => true do |t|
+    t.integer  "patient_id"
+    t.string   "drug"
+    t.string   "dossage"
+    t.string   "duration"
+    t.string   "pharmacist"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -53,6 +80,24 @@ ActiveRecord::Schema.define(:version => 20120713212242) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "socials", :force => true do |t|
+    t.integer  "patient_id"
+    t.string   "condition"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "surgicals", :force => true do |t|
+    t.integer  "patient_id"
+    t.string   "title"
+    t.string   "description"
+    t.string   "surgeon"
+    t.string   "report"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -67,6 +112,8 @@ ActiveRecord::Schema.define(:version => 20120713212242) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "username"
+    t.boolean  "isadmin"
+    t.string   "type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

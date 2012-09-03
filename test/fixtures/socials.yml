@@ -3,9 +3,13 @@
 one:
   patient_id: 1
   condition: 
-  description: MyString
+  reason: MyString
+  treatment: MyString
+  doctor: MyString
 
 two:
   patient_id: 1
   condition: 
-  description: MyString
+  reason: MyString
+  treatment: MyString
+  doctor: MyString

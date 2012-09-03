@@ -2,14 +2,16 @@
 
 one:
   patient_id: 1
+  condition: MyString
   drug: MyString
   dossage: MyString
   duration: MyString
-  pharmacist: MyString
+  doctor: MyString
 
 two:
   patient_id: 1
+  condition: MyString
   drug: MyString
   dossage: MyString
   duration: MyString
-  pharmacist: MyString
+  doctor: MyString

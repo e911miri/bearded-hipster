@@ -2,14 +2,12 @@
 
 one:
   patient_id: 1
-  title: MyString
-  description: MyString
+  condition: MyString
+  procedure: MyString
   surgeon: MyString
-  report: MyString
 
 two:
   patient_id: 1
-  title: MyString
-  description: MyString
+  condition: MyString
+  procedure: MyString
   surgeon: MyString
-  report: MyString

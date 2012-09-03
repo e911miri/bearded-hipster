@@ -1,3 +1,3 @@
 class Alergy < ActiveRecord::Base
-  attr_accessible :description, :patient_id, :remedy, :substance
+  attr_accessible :doctor, :irritant, :patient_id, :remedy, :symptoms
 end

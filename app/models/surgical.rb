@@ -1,3 +1,3 @@
 class Surgical < ActiveRecord::Base
-  attr_accessible :description, :patient_id, :report, :surgeon, :title
+  attr_accessible :condition, :patient_id, :procedure, :surgeon
 end

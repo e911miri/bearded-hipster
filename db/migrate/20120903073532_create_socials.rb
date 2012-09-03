@@ -2,8 +2,10 @@ class CreateSocials < ActiveRecord::Migration
   def change
     create_table :socials do |t|
       t.integer :patient_id
-      t.string :condition
-      t.string :description
+      t.title :condition
+      t.string :reason
+      t.string :treatment
+      t.string :doctor
 
       t.timestamps
     end

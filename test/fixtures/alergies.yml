@@ -2,12 +2,14 @@
 
 one:
   patient_id: 1
-  substance: MyString
-  description: MyString
+  irritant: MyString
+  symptoms: MyString
   remedy: MyString
+  doctor: MyString
 
 two:
   patient_id: 1
-  substance: MyString
-  description: MyString
+  irritant: MyString
+  symptoms: MyString
   remedy: MyString
+  doctor: MyString
