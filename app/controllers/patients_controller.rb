@@ -4,6 +4,7 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     @patients = Patient.all
+    
 
     respond_to do |format|
       format.html # index.html.erb
