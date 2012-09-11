@@ -14,14 +14,18 @@
 		<li><%=link_to "Surgical Records", surgicals_path %></li>
 		<li><%=link_to "Medical Records", "#" %></li>
 		<li><%=link_to "Family Records", "#" %></li>
-		<li><%=link_to "Alergies", alergy_index_path(current_user) %></li>
+		<li><%=link_to "Alergies", alergies_path(current_user) %></li>
 		<li><%=link_to "Medications", medications_path %></li>
 		<li><%=link_to "Diagonosis Records", "#" %></li>
 		<li><%=link_to "Clinical Records", "#" %></li>
 		<li><%=link_to "Lab Records", "#" %></li>
 		<li><%=link_to "Radiology Records", "#" %></li>   		
 	<% elsif current_user.doctor? %>
-		
+		<li class="nav-header">Doctor's Control Panel</li>
+		<li><%=link_to "Doctor's Information", edit_user_registration_path(current_user) %></li>
+		<li><%=link_to "Doctor's Patients", edit_user_registration_path(current_user) %></li>
+		<li><%=link_to "Messages", "#" %></li>
+		<li class="divider"></li>
 	<% else  %>
 		<li class="nav-header">Patient Information</li>
 		<li><%=link_to "User Information", edit_user_registration_path(current_user) %></li>
@@ -32,7 +36,7 @@
 		<li><%=link_to "Surgical Records", surgical_path(current_user) %></li>
 		<li><%=link_to "Medical Records", "#" %></li>
 		<li><%=link_to "Family Records", "#" %></li>
-		<li><%=link_to "Alergies", alergy_index_path(current_user) %></li>
+		<li><%=link_to "Alergies", alergies_path(current_user) %></li>
 		<li><%=link_to "Medications", medications_path %></li>
 		<li><%=link_to "Diagonosis Records", "#" %></li>
 		<li><%=link_to "Clinical Records", "#" %></li>
