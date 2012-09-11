@@ -1,10 +1,11 @@
-
 class PatientsController < ApplicationController
+  before_filter :authenticate_user!
+  include ApplicationHelper
+  layout "layouts/doctors_layout"
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
-    
+    @patients = Patient.paginate(page: params[:page])  
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,14 +16,22 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
-    @patient = Patient.find(params[:id])
+    @patient=current_patient
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @patient }
     end
   end
-
+  
+  def history
+    patient=Patient.find(params[:id])
+    @history=patient.medications
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @patient }
+    end
+  end
   # GET /patients/new
   # GET /patients/new.json
   def new

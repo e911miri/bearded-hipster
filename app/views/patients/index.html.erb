@@ -1,35 +1,22 @@
-<div class="container-fluid">
-	<section class="row-fluid">
-		<section class="span2" style="padding-top: 20px">
-			<ul class="nav nav-list">
-				<li class="nav-header">Patient Information</li>
-				<li><%=link_to "Demographics", "#" %></li>
-				<li><%=link_to "Health Summary", "#" %></li>
-				<li><%=link_to "History Summary", "#" %></li>
-				<li class="divider"></li>
-				<li class="nav-header">Health Records</li>
-				<li><%=link_to "Surgical Records", "#" %></li>
-				<li><%=link_to "Medical Records", "#" %></li>
-				<li><%=link_to "Family Records", "#" %></li>
-				<li><%=link_to "Alergies", "#" %></li>
-				<li><%=link_to "Medications", "#" %></li>
-				<li><%=link_to "Diagonosis Records", "#" %></li>
-				<li><%=link_to "Clinical Records", "#" %></li>
-				<li><%=link_to "Lab Records", "#" %></li>
-				<li><%=link_to "Radiology Records", "#" %></li>
-			</ul>
-		</section>
-		<section class="span8">
-			<header>
-				<h2 id="title">Patient Information</h2>
-			</header>
-			<article class="hero-unit">
-				<ul id="main_list"></ul>
-			</article>
-		</section>
-		<section class="span2">
-			<p class="lead"><%= current_user.email %></p>
-			<p>Last Access Time:</p>
-		</section>
-	</section>
-</div>
+
+<header>
+	<h2 id="title">All Patients</h2>
+</header>
+<article class="hero-unit">
+	<%= will_paginate %>
+	<ul class="patients">
+	<% @patients.each do |patient| %>
+	
+	  <li>
+	  	<%= patient.firstname %>, <%= patient.lastname %>
+	  	<div>
+	  		<%= link_to 'Show', patient %>
+	  		<%= link_to 'Edit', edit_patient_path(patient) %>
+	  		<%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %>
+	  	</div>
+	  </li>
+	  <% end %>
+	</ul>				
+	<%= will_paginate %>
+</article>
+

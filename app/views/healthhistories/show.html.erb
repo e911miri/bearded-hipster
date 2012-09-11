@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Patient:</b>
+  <%= @healthhistory.patient_id %>
+</p>
+
+<p>
+  <b>Information:</b>
+  <%= @healthhistory.information %>
+</p>
+
+
+<%= link_to 'Edit', edit_healthhistory_path(@healthhistory) %> |
+<%= link_to 'Back', healthhistories_path %>

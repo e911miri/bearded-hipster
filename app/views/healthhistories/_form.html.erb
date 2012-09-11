@@ -1,0 +1,25 @@
+<%= form_for(@healthhistory) do |f| %>
+  <% if @healthhistory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@healthhistory.errors.count, "error") %> prohibited this healthhistory from being saved:</h2>
+
+      <ul>
+      <% @healthhistory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :patient_id %><br />
+    <%= f.text_field :patient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :information %><br />
+    <%= f.text_field :information %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module HealthhistoriesHelper
+end

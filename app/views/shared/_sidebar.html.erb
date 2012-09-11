@@ -1,0 +1,43 @@
+<section class="span2" style="padding-top: 20px">
+	<ul class="nav nav-list">
+	<% if current_user.admin? %>
+		<li class="nav-header">Administrative Information</li>
+		<li><%= link_to "manage Users", users_path %></li>
+		<li><%= link_to "manage Patients", patients_path %></li>
+		<li><%= link_to "manage Doctors", doctors_path %></li>  
+		<li class="nav-header">Patient Information</li>
+		<li><%=link_to "User Information", edit_user_registration_path(current_user) %></li>
+		<li><%=link_to "Health Summary", healthhistory_path(current_user) %></li>
+		<li><%=link_to "History Summary", healthhistories_path %></li>
+		<li class="divider"></li>
+		<li class="nav-header">Health Records</li>
+		<li><%=link_to "Surgical Records", surgicals_path %></li>
+		<li><%=link_to "Medical Records", "#" %></li>
+		<li><%=link_to "Family Records", "#" %></li>
+		<li><%=link_to "Alergies", alergy_index_path(current_user) %></li>
+		<li><%=link_to "Medications", medications_path %></li>
+		<li><%=link_to "Diagonosis Records", "#" %></li>
+		<li><%=link_to "Clinical Records", "#" %></li>
+		<li><%=link_to "Lab Records", "#" %></li>
+		<li><%=link_to "Radiology Records", "#" %></li>   		
+	<% elsif current_user.doctor? %>
+		
+	<% else  %>
+		<li class="nav-header">Patient Information</li>
+		<li><%=link_to "User Information", edit_user_registration_path(current_user) %></li>
+		<li><%=link_to "Health Summary", healthhistory_path(current_user) %></li>
+		<li><%=link_to "History Summary", healthhistories_path(current_user) %></li>
+		<li class="divider"></li>
+		<li class="nav-header">Health Records</li>
+		<li><%=link_to "Surgical Records", surgical_path(current_user) %></li>
+		<li><%=link_to "Medical Records", "#" %></li>
+		<li><%=link_to "Family Records", "#" %></li>
+		<li><%=link_to "Alergies", alergy_index_path(current_user) %></li>
+		<li><%=link_to "Medications", medications_path %></li>
+		<li><%=link_to "Diagonosis Records", "#" %></li>
+		<li><%=link_to "Clinical Records", "#" %></li>
+		<li><%=link_to "Lab Records", "#" %></li>
+		<li><%=link_to "Radiology Records", "#" %></li> 
+	<% end %>
+	</ul>
+</section>

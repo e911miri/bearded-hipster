@@ -1,0 +1,21 @@
+<h3>All Patients</h3>
+<div class="hero-unit">
+	<table class="table">
+
+	<% @users.each do |user| %>
+	  <tr class="table">
+	    <td><%= user.email %></td>
+	    <td><%= user.admin %></td>
+	    <td><%= user.doctor %></td>
+	    <td><%= link_to 'Show', user %></td>
+	    <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
+	    <td><%= link_to 'Destroy', edit_user_registration_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+</div>
+
+<br />
+
+<%= link_to 'New User', new_user_path, :class => "btn btn-large" %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903074004) do
+ActiveRecord::Schema.define(:version => 20120911102534) do
 
   create_table "alergies", :force => true do |t|
     t.integer  "patient_id"
@@ -23,12 +23,27 @@ ActiveRecord::Schema.define(:version => 20120903074004) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "associations", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.integer  "type_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "doctors", :force => true do |t|
     t.string   "name"
     t.string   "gender"
     t.string   "address"
     t.string   "specialty"
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "doctorspatients", :force => true do |t|
+    t.string   "doctor_id"
+    t.string   "patient_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -88,6 +103,20 @@ ActiveRecord::Schema.define(:version => 20120903074004) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "user_doctors", :force => true do |t|
+    t.string   "user_id"
+    t.string   "doctor_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_patients", :force => true do |t|
+    t.string   "user_id"
+    t.string   "patient_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -104,6 +133,9 @@ ActiveRecord::Schema.define(:version => 20120903074004) do
     t.string   "username"
     t.boolean  "isadmin"
     t.string   "type"
+    t.boolean  "admin"
+    t.boolean  "doctot"
+    t.boolean  "doctor"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Condition:</b>
+  <%= @surgical.condition %>
+</p>
+
+<p>
+  <b>Procedure:</b>
+  <%= @surgical.procedure %>
+</p>
+
+<p>
+  <b>Surgeon:</b>
+  <%= @surgical.surgeon %>
+</p>
+
+<p>
+  <b>Patient:</b>
+  <%= @surgical.patient_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_surgical_path(@surgical) %> |
+<%= link_to 'Back', surgicals_path %>

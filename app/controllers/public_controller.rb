@@ -1,11 +1,6 @@
 class PublicController < ApplicationController
   def home
-    # @public = Patient.paginate(page: params[:page])
-# 
-    # respond_to do |format|
-      # format.html # index.html.erb
-      # format.json { render json: @patients }
-    # end
+    @user=User.new
   end
   
   def about

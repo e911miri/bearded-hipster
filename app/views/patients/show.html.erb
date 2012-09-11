@@ -1,23 +1,26 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<h3>View Patient</h3>
 <p>
-	<b>Name:</b>
-	<%= @patient.name %>
+  First name:
+  <%= @patient.firstname %><br />
+  last name:
+  <%= @patient.lastname %><br />
+  gender:
+  <%= @patient.gender %><br />
+  origin:
+  <%= @patient.origin %><br />
+  address:
+  <%=   @patient.address %><br />
+  tribe:
+  <%=   @patient.occupation %><br />
+  religion:
+  <%=   @patient.religion %><br />
+  phone:
+  <%=   @patient.phone %><br />
+  nextofkin
+  <%=   @patient.nextofkin %><br />
+  family_history:
+  <%=   @patient.family_history %><br />
+  past_medical_record
+  <%=   @patient.past_medical_record %><br />
 </p>
-<p>
-	<b>Genotype:</b>
-	<%= @patient.genotype %>
-</p>
-<p>
-	<b>Status:</b>
-	<%= @patient.status %>
-</p>
-<% if @patient.patientrecords.any? %> 
-<h3>Patient Records (<%= @patient.patientrecords.count %>)</h3>
-<ol class="microposts">
-	<%= render @patientrecords %>
-</ol>
-<%= will_paginate @microposts %>
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %> 
+<%= link_to "Edit", edit_patient_path(current_patient), :class=> "btn btn-large"%>

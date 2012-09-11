@@ -1,0 +1,29 @@
+<h1>Listing surgicals</h1>
+
+<table class="table">
+  <tr>
+    <th>Condition</th>
+    <th>Procedure</th>
+    <th>Surgeon</th>
+    <th>Patient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @surgicals.each do |surgical| %>
+  <tr>
+    <td><%= surgical.condition %></td>
+    <td><%= surgical.procedure %></td>
+    <td><%= surgical.surgeon %></td>
+    <td><%= surgical.patient_id %></td>
+    <td><%= link_to 'Show', surgical %></td>
+    <td><%= link_to 'Edit', edit_surgical_path(surgical) %></td>
+    <td><%= link_to 'Destroy', surgical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Surgical', new_surgical_path, :class=> "btn btn-large" %>

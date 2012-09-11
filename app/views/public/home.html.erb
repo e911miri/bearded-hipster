@@ -1,35 +1,73 @@
 <%= provide(:title, 'Home') %>
-<div class="hero-unit">
-	<h1>Medical Records</h1>
-	<p>Wireless Based Mobile Health Records Management System</p>
+<div class="hero-unit clearfix">
+	<div class="pull-left span5">
+		<h1>Medical Records</h1>
+		<p>Wireless Based Mobile Health Records Management System</p>
+		<a class="btn btn-primary btn-large">Explore the Hospital</a>
+	</div>
+	<div class="pull-right">
+	<% if user_signed_in? %>
+	<h3>Welcome <%= current_user.email %></h3>
+	<ul class="nav nav-tabs nav-stacked">
+		<li><%= link_to "Patient Records", patient_path(current_user) %></li>
+		<li><a href="#">Contact Doctor</a></li>
+		<li><%= link_to "Personal Information", user_path(current_user) %></li>
+	</ul>
+	<% if current_user.admin? %>
+	<ul class="nav nav-tabs nav-stacked">
+		<li><%= link_to "manage Users", users_path %></li>
+		<li><%= link_to "manage Patients", patients_path %></li>
+		<li><%= link_to "manage Doctors", doctors_path %></li>
+	</ul>
+	<% end %>
+	<% else %>
+		<%= form_for @user, :html =>{:class => "well"}, :url => new_user_session_path do |f| %>
+		  <%= f.label :email %>
+		  <%= f.email_field :email, :class=> "span4", :placehlder => "Please enter your email" %>
+		
+		  <%= f.label :password %>
+		  <%= f.password_field :password, :class=> "span4", :placehlder => "Please enter your email" %>
+		  
+		  <%= f.check_box :remember_me %> <%= f.label :remember_me %>		 
+		
+		  <%= f.submit "Log me in", :class => "btn" %>
+		<% end %>
+	<% end %>
+				
+	</div>	
 </div>
-
 <div class="row">
 	<div class="span4">
-		<h2>Doctors Portal</h2>
-		<p class="lead">
-			Doctors and Medical Personnel should log in here
-		</p>
-		<p>
-			<a class="btn btn-large" href="#">Learn More &raquo;</a>
-		</p>
+		<div class="thumbnail">
+			<img alt="" src="assets/geeksngreeks.png" />
+			<div class="caption">
+				<h5>Thumbnail label</h5>
+				<p>Some details about the paragraph</p>
+				<p>
+					<a class="btn btn-primary" href="#">Action</a>
+					<a class="btn btn-primary" href="#">Action</a>
+				</p>
+			</div>
+		</div>
 	</div>
 	<div class="span4">
-		<h2>Patients Portal</h2>
-		<p class="lead">
-			Patients and Individuals with the correct credential can access Public Health Records Here
-		</p>
-		<p class="lead">
-			<a class="btn btn-large" href="#">View details &raquo;</a>
-		</p>
+		<div class="thumbnail">
+			<img alt="" src="assets/geeksngreeks.png" />
+			<div class="caption">
+				<h5>Thumbnail label</h5>
+				<p>Some details about the paragraph</p>
+				<p>
+					<a class="btn btn-primary" href="#">Action</a>
+					<a class="btn btn-primary" href="#">Action</a>
+				</p>
+			</div>
+		</div>
 	</div>
 	<div class="span4">
-		<h2>Mobile Health Records</h2>
-		<p class="lead">
-			Health Records is available on your mobile device by sending an sms.
-		</p>
-		<p>
-			<a class="btn btn-large" href="#">Find out more &raquo;</a>
-		</p>
-	</div>
+		<div class="thumbnail">
+			<a class="thumbnail" href="#">
+				<img alt="" src="assets/geeksngreeks.png" />
+			</a>						
+		</div>
+	</div>		
 </div>
