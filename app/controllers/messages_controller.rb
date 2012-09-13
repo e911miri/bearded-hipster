@@ -1,8 +1,9 @@
 class MessagesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = current_user.messages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,10 +42,10 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
-
+    @message.user=current_user
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to @message, notice: 'Message was successfully Sent.' }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }

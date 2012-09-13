@@ -7,6 +7,7 @@
 		<li><%= link_to "manage Doctors", doctors_path %></li>  
 		<li class="nav-header">Patient Information</li>
 		<li><%=link_to "User Information", edit_user_registration_path(current_user) %></li>
+		<li><%=link_to "Messages", messages_path %></li>
 		<li><%=link_to "Health Summary", healthhistory_path(current_user) %></li>
 		<li><%=link_to "History Summary", healthhistories_path %></li>
 		<li class="divider"></li>
@@ -24,11 +25,12 @@
 		<li class="nav-header">Doctor's Control Panel</li>
 		<li><%=link_to "Doctor's Information", edit_user_registration_path(current_user) %></li>
 		<li><%=link_to "Doctor's Patients", edit_user_registration_path(current_user) %></li>
-		<li><%=link_to "Messages", "#" %></li>
+		<li><%=link_to "Messages", messages_path %></li>
 		<li class="divider"></li>
 	<% else  %>
 		<li class="nav-header">Patient Information</li>
 		<li><%=link_to "User Information", edit_user_registration_path(current_user) %></li>
+		<li><%=link_to "Messages", "#" %></li>
 		<li><%=link_to "Health Summary", healthhistory_path(current_user) %></li>
 		<li><%=link_to "History Summary", healthhistories_path(current_user) %></li>
 		<li class="divider"></li>

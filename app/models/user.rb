@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :isadmin, :type, :admin, :doctor
   has_many :microposts
+  has_many :messages, :dependent => :destroy
   # attr_accessible :title, :body
   
   def get_type

@@ -19,7 +19,10 @@
   <b>Patient:</b>
   <%= @surgical.patient_id %>
 </p>
-
+<p>
+  <b>Date Submitted:</b>
+  <%= @surgical.created_at %>
+</p>
 
 <%= link_to 'Edit', edit_surgical_path(@surgical) %> |
 <%= link_to 'Back', surgicals_path %>

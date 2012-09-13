@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911142720) do
+ActiveRecord::Schema.define(:version => 20120911211633) do
 
   create_table "alergies", :force => true do |t|
     t.integer  "patient_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20120911142720) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "user_id"
   end
 
   create_table "microposts", :force => true do |t|
